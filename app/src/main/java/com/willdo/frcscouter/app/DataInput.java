@@ -5,7 +5,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 public class DataInput extends ActionBarActivity {
 
@@ -13,6 +12,7 @@ public class DataInput extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_input);
+        /* TODO: If updating an entry, load data from database */
     }
 
 
@@ -31,9 +31,11 @@ public class DataInput extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch( item.getItemId() ) {
             case R.id.action_next:
+                saveEntry();
                 nextAction();
                 return true;
             case R.id.action_done:
+                saveEntry();
                 doneAction();
                 return true;
             default:
@@ -48,6 +50,8 @@ public class DataInput extends ActionBarActivity {
         Intent intent = new Intent(this, RankingConfig.class);
         startActivity(intent);
     }
-
+    public void saveEntry() {
+        /* TODO: Update database with new entry or replace previous entry with new data */
+    }
 
 }

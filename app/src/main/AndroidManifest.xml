@@ -33,12 +33,28 @@
                 android:value="MainMenu" />
         </activity>
         <activity
-            android:name="com.willdo.frcscouter.app.MatchList"
-            android:label="@string/title_activity_match_list"
-            android:parentActivityName="com.willdo.frcscouter.app.MainMenu" >
+        android:name="com.willdo.frcscouter.app.MatchList"
+        android:label="@string/title_activity_match_list"
+        android:parentActivityName="com.willdo.frcscouter.app.MainMenu" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="MainMenu" />
+        </activity>
+        <activity
+        android:name="com.willdo.frcscouter.app.TeamList"
+        android:label="@string/title_activity_match_list"
+        android:parentActivityName="com.willdo.frcscouter.app.MainMenu" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="MainMenu" />
+        </activity>
+        <activity
+            android:name="com.willdo.frcscouter.app.TeamDetail"
+            android:label="@string/title_activity_team_detail"
+            android:parentActivityName="com.willdo.frcscouter.app.TeamList" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="MainMenu" />
+                android:value="TeamList" />
         </activity>
     </application>
 

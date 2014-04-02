@@ -2,10 +2,23 @@
 <resources>
 
     <string name="app_name">FRC Scouter Toolbox</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_data_input">DataInput</string>
-    <string name="title_activity_ranking_config">RankingConfig</string>
-    <string name="title_activity_match_list">MatchList</string>
+    <string name="title_activity_data_input">Data Input</string>
+    <string name="title_activity_ranking_config">Configure Weights</string>
+    <string name="title_activity_match_list">Match List</string>
+    <string name="criteria_A">Low Goals</string>
+    <string name="criteria_B">High Goals</string>
+    <string name="criteria_C">Throws</string>
+    <string name="criteria_D">Catches</string>
+    <string name="criteria_AW">Low Goal Weight</string>
+    <string name="criteria_BW">High Goal Weight</string>
+    <string name="criteria_CW">Throw Weight</string>
+    <string name="criteria_DW">Catch Weight</string>
+    <string name="title_activity_team_detail">Team Detail</string>
+    <string name="title_activity_team_list">Team Rankings</string>
+    <string name="clear_warning">Clear all entries?
+        This will remove all teams and matches forever.</string>
+    <string name="cancel"> Cancel </string>
+    <string name="clear_confirm"> Clear all data. </string>
 
 </resources>

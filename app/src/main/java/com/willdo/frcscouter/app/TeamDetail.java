@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MatchList extends ActionBarActivity {
+public class TeamDetail extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_match_list);
-        /* TODO: Read database and get teams sorted by team number */
+        setContentView(R.layout.activity_team_detail);
     }
 
 
@@ -19,7 +18,7 @@ public class MatchList extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.match_list, menu);
+        getMenuInflater().inflate(R.menu.team_detail, menu);
         return true;
     }
 

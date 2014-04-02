@@ -20,13 +20,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="High Goal Weight"
-            android:id="@+id/highWeightLabel" />
+            android:text="@string/criteria_AW"
+            android:id="@+id/criteriaAWeightLabel" />
 
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/highWeight"
+            android:id="@+id/criteriaAWeight"
             android:layout_gravity="center_horizontal"
             android:indeterminate="false"
             android:max="100"
@@ -36,13 +36,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Low Goal Weight"
-            android:id="@+id/lowWeightLabel" />
+            android:text="@string/criteria_BW"
+            android:id="@+id/criteriaBWeightLabel" />
 
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/lowWeight"
+            android:id="@+id/criteriaBWeight"
             android:indeterminate="false"
             android:max="100"
             android:progress="20" />
@@ -51,13 +51,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Throws Weight"
-            android:id="@+id/throwWeightLabel" />
+            android:text="@string/criteria_CW"
+            android:id="@+id/criteriaCWeightLabel" />
 
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/throwWeight"
+            android:id="@+id/criteriaCWeight"
+            android:max="100"
+            android:progress="20"
+            android:indeterminate="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/criteria_DW"
+            android:id="@+id/criteriaDWeightLabel" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/criteriaDWeight"
+            android:layout_gravity="center_horizontal"
+            android:max="100"
+            android:progress="20"
+            android:indeterminate="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Penalty Weight"
+            android:id="@+id/penaltyWeightLabel" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/penaltyWeight"
             android:max="100"
             android:progress="20"
             android:indeterminate="false" />
@@ -73,22 +104,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/coopWeight"
-            android:layout_gravity="center_horizontal"
-            android:max="100"
-            android:progress="20"
-            android:indeterminate="false" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Penalties Weight"
-            android:id="@+id/penaltyWeightLabel" />
-
-        <SeekBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/penaltyWeightLabel"
             android:max="100"
             android:progress="20"
             android:indeterminate="false" />
@@ -109,4 +124,5 @@
             android:indeterminate="false" />
 
     </LinearLayout>
+
 </RelativeLayout>

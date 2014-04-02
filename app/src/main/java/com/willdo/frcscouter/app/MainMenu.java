@@ -1,7 +1,11 @@
 package com.willdo.frcscouter.app;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +17,8 @@ public class MainMenu extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        /* TODO: Database initialization */
     }
 
 
@@ -46,6 +52,32 @@ public class MainMenu extends ActionBarActivity {
     }
     public void calcButtonAction( View view ) {
         Intent intent = new Intent(this, RankingConfig.class);
+        startActivity(intent);
+    }
+    public void clearButtonAction( View view ) {
+        DialogFragment clearDialog = new DialogFragment() {
+            @Override
+            public Dialog onCreateDialog( Bundle savedInstanceState) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage(R.string.clear_warning)
+                        .setPositiveButton(R.string.clear_confirm, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // FIRE ZE MISSILES!
+                            }
+                        })
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // User cancelled the dialog
+                            }
+                        });
+                return builder.create();
+            }
+
+        };
+        clearDialog.show(getSupportFragmentManager(), "clear");
+    }
+    public void rankButtonAction( View view ) {
+        Intent intent = new Intent(this, TeamList.class);
         startActivity(intent);
     }
 }

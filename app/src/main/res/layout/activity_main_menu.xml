@@ -12,7 +12,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Add Entry"
-        android:id="@+id/AddButton"
+        android:id="@+id/addButton"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
@@ -22,8 +22,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Edit Entry"
-        android:id="@+id/EditButton"
-        android:layout_below="@+id/AddButton"
+        android:id="@+id/editButton"
+        android:layout_below="@+id/addButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:onClick="editButtonAction" />
@@ -32,9 +32,29 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Calculate Rankings"
-        android:id="@+id/CalcButton"
-        android:layout_below="@+id/EditButton"
+        android:id="@+id/calcButton"
+        android:layout_below="@+id/editButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
         android:onClick="calcButtonAction" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Database"
+        android:id="@+id/clearButton"
+        android:layout_below="@+id/calcButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:onClick="clearButtonAction" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="View Rankings"
+        android:id="@+id/rankButton"
+        android:layout_below="@+id/clearButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:onClick="rankButtonAction" />
 </RelativeLayout>
