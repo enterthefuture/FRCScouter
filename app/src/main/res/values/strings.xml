@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FRC Scouter Toolbox</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_data_input">DataInput</string>
+    <string name="title_activity_ranking_config">RankingConfig</string>
+    <string name="title_activity_match_list">MatchList</string>
+
+</resources>
