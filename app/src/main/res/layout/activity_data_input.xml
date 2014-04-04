@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Alliance"
-                android:id="@+id/AllianceSwitch"
+                android:id="@+id/allianceSwitch"
                 android:textOff="Red"
                 android:textOn="Blue"
                 android:textSize="25dp"
@@ -81,7 +81,8 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/criteriaANum"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -96,7 +97,8 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/criteriaBNum"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -111,7 +113,8 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/criteraCNum"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -125,7 +128,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/criteriaDNum" />
+                android:id="@+id/criteriaDNum"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -139,7 +143,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/penaltiesNum" />
+                android:id="@+id/penaltiesNum"
+                android:text="0" />
 
             <TextView
                 android:layout_width="wrap_content"

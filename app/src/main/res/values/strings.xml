@@ -20,5 +20,7 @@
         This will remove all teams and matches forever.</string>
     <string name="cancel"> Cancel </string>
     <string name="clear_confirm"> Clear all data. </string>
+    <string name="no_teams">No Teams Recorded</string>
+    <string name="no_matches">No Matches Recorded</string>
 
 </resources>
