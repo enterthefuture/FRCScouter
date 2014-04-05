@@ -70,7 +70,7 @@ public class MatchList extends ListActivity {
     }
 
     public void doneAction() {
-        Intent intent = new Intent(this, RankingConfig.class);
+        Intent intent = new Intent(this, TeamList.class);
         startActivity(intent);
     }
 }

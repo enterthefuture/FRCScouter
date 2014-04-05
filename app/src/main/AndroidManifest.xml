@@ -42,7 +42,7 @@
         </activity>
         <activity
         android:name="com.willdo.frcscouter.app.TeamList"
-        android:label="@string/title_activity_match_list"
+        android:label="@string/title_activity_team_list"
         android:parentActivityName="com.willdo.frcscouter.app.MainMenu" >
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

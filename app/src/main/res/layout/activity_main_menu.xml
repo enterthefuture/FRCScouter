@@ -31,30 +31,21 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate Rankings"
-        android:id="@+id/calcButton"
+        android:text="View Rankings"
+        android:id="@+id/rankButton"
         android:layout_below="@+id/editButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
-        android:onClick="calcButtonAction" />
+        android:onClick="rankButtonAction" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Clear Database"
         android:id="@+id/clearButton"
-        android:layout_below="@+id/calcButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:onClick="clearButtonAction" />
+        android:onClick="clearButtonAction"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="View Rankings"
-        android:id="@+id/rankButton"
-        android:layout_below="@+id/clearButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
-        android:onClick="rankButtonAction" />
 </RelativeLayout>

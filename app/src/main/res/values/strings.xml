@@ -15,7 +15,7 @@
     <string name="criteria_CW">Throw Weight</string>
     <string name="criteria_DW">Catch Weight</string>
     <string name="title_activity_team_detail">Team Detail</string>
-    <string name="title_activity_team_list">Team Rankings</string>
+    <string name="title_activity_team_list">Team List</string>
     <string name="clear_warning">To clear all entries, go to Settings -> Applications -> FRC Scouting Toolkit then click clear data.
     This can be hard. That is intentional so that it is not done accidentally.</string>
     <string name="cancel"> Cancel </string>

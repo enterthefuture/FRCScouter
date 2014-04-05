@@ -144,7 +144,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Coop"
-        android:id="@+id/coopRating"
+        android:id="@+id/coopNum"
         android:layout_alignTop="@+id/coopLabel"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -164,8 +164,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Defense"
-        android:id="@+id/defenseRating"
-        android:layout_below="@+id/coopRating"
+        android:id="@+id/defenseNum"
+        android:layout_below="@+id/coopNum"
         android:layout_alignRight="@+id/penaltiesNum"
         android:layout_alignEnd="@+id/penaltiesNum" />
 
