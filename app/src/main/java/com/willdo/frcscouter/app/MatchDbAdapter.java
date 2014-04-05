@@ -99,6 +99,8 @@ public class MatchDbAdapter {
         initialValues.put(KEY_COOP, coop);
         initialValues.put(KEY_DEFENSE, defense);
 
+        Log.v("DB", initialValues.toString());
+
         return mDb.insert(DATABASE_TABLE, null, initialValues);
     }
 
@@ -107,8 +109,8 @@ public class MatchDbAdapter {
     }
 
     public Cursor fetchAllMatches() {
-        return mDb.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TEAM,
-                KEY_MATCH}, null, null, null, null, null);
+        return mDb.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TEAM, KEY_MATCH, KEY_ALLIANCE, KEY_CRITA, KEY_CRITB, KEY_CRITC, KEY_CRITD, KEY_PENALTY, KEY_COOP, KEY_DEFENSE}
+                , null, null, null, null, null);
     }
 
     public Cursor fetchMatchCursor(long rowId) throws SQLException {
@@ -135,6 +137,8 @@ public class MatchDbAdapter {
         args.put(KEY_PENALTY, penalty);
         args.put(KEY_COOP, coop);
         args.put(KEY_DEFENSE, defense);
+
+        Log.v("DB", args.toString());
 
         return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
     }

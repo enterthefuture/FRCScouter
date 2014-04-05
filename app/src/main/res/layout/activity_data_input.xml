@@ -37,7 +37,8 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/teamNum"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:numeric="integer" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -53,7 +54,8 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/matchNum"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:numeric="integer" />
             </LinearLayout>
 
             <Switch
@@ -82,7 +84,8 @@
                 android:ems="10"
                 android:id="@+id/criteriaANum"
                 android:layout_gravity="right"
-                android:text="0" />
+                android:text="0"
+                android:numeric="integer" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,7 +101,8 @@
                 android:ems="10"
                 android:id="@+id/criteriaBNum"
                 android:layout_gravity="right"
-                android:text="0" />
+                android:text="0"
+                android:numeric="integer" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -112,9 +116,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/criteraCNum"
+                android:id="@+id/criteriaCNum"
                 android:layout_gravity="right"
-                android:text="0" />
+                android:text="0"
+                android:numeric="integer" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -129,7 +134,8 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/criteriaDNum"
-                android:text="0" />
+                android:text="0"
+                android:numeric="integer" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,7 +150,8 @@
                 android:inputType="number"
                 android:ems="10"
                 android:id="@+id/penaltiesNum"
-                android:text="0" />
+                android:text="0"
+                android:numeric="integer" />
 
             <TextView
                 android:layout_width="wrap_content"

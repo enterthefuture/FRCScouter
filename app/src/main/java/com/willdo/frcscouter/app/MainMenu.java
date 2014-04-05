@@ -13,12 +13,13 @@ import android.view.View;
 
 public class MainMenu extends ActionBarActivity {
 
+    private MatchDbAdapter mDbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
-        /* TODO: Database initialization */
+        mDbHelper = new MatchDbAdapter(this);
     }
 
 
@@ -59,17 +60,7 @@ public class MainMenu extends ActionBarActivity {
             @Override
             public Dialog onCreateDialog( Bundle savedInstanceState) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setMessage(R.string.clear_warning)
-                        .setPositiveButton(R.string.clear_confirm, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                // FIRE ZE MISSILES!
-                            }
-                        })
-                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                // User cancelled the dialog
-                            }
-                        });
+                builder.setMessage(R.string.clear_warning);
                 return builder.create();
             }
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -54,6 +55,11 @@ public class DataInput extends ActionBarActivity {
         }
     }
 
+//    @Override
+//    public void onDestroy(){
+//        saveEntry();
+//        super.onDestroy();
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -86,27 +92,66 @@ public class DataInput extends ActionBarActivity {
         startActivity(intent);
     }
     public void doneAction() {
-        Intent intent = new Intent(this, RankingConfig.class);
+        Intent intent = new Intent(this, MatchList.class);
         startActivity(intent);
     }
     public void saveEntry() {
-        int team = Integer.parseInt(mTeam.getText().toString());
-        int match = Integer.parseInt(mMatch.getText().toString());
+        int team = -1;
+        if(mTeam != null)
+            team = Integer.parseInt(mTeam.getText().toString());
+
+        int match = -1;
+        if(mMatch != null)
+            match = Integer.parseInt(mMatch.getText().toString());
+
         int alliance = (mAlliance.isChecked())?0:1;
-        int critA = Integer.parseInt(mCritA.getText().toString());
-        int critB = Integer.parseInt(mCritB.getText().toString());
-        int critC = Integer.parseInt(mCritC.getText().toString());
-        int critD = Integer.parseInt(mCritD.getText().toString());
-        int penalties = Integer.parseInt(mPenalties.getText().toString());
+
+        int critA = -1;
+        if(mCritA != null)
+            critA = Integer.parseInt(mCritA.getText().toString());
+
+        int critB = -1;
+        if(mCritB != null)
+            critB = Integer.parseInt(mCritB.getText().toString());
+
+        int critC =  -1;
+        if(mCritC != null)
+            critC = Integer.parseInt(mCritC.getText().toString());
+
+        int critD =  -1;
+        if(mCritD != null)
+            critD = Integer.parseInt(mCritD.getText().toString());
+
+        int penalties = -1;
+        if(mPenalties != null)
+            penalties = Integer.parseInt(mPenalties.getText().toString());
+
         int coop = (int)(mCoop.getRating()*2);
         int defense = (int)(mDefense.getRating()*2);
 
-        if(mRowId != -1) {
+        String TAG;
+
+        if(mRowId == -1) {
+            TAG="Saving";
             mDbHelper.createMatch(team, match, alliance, critA, critB, critC, critD,penalties, coop, defense);
         } else {
+            TAG="Updating";
             mDbHelper.updateMatch( mRowId, team, match, alliance, critA, critB, critC, critD,penalties, coop, defense);
         }
+
+        Log.v(TAG, Integer.toString(team) + " " +
+                Integer.toString(match) + " " +
+                Integer.toString(alliance) + " " +
+                Integer.toString(critA) + " " +
+                Integer.toString(critB) + " " +
+                Integer.toString(critC) + " " +
+                Integer.toString(critD) + " " +
+                Integer.toString(penalties) + " " +
+                Integer.toString(coop) + " " +
+                Integer.toString(defense)
+        );
     }
+
     public void fillData( long mRowId) {
         Cursor c = mDbHelper.fetchMatchCursor(mRowId);
         mTeam.setText(String.valueOf(c.getInt(1)));
@@ -117,8 +162,8 @@ public class DataInput extends ActionBarActivity {
         mCritC.setText(String.valueOf(c.getInt(6)));
         mCritD.setText(String.valueOf(c.getInt(7)));
         mPenalties.setText(String.valueOf(c.getInt(8)));
-        mCoop.setRating(c.getInt(9)/2);
-        mDefense.setRating(c.getInt(10) / 2);
+        mCoop.setRating((float)(c.getInt(9) / 2.0));
+        mDefense.setRating((float)(c.getInt(10) / 2.0));
     }
 
 }

@@ -1,5 +1,6 @@
 package com.willdo.frcscouter.app;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,10 +29,14 @@ public class RankingConfig extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_done) {
+            doneAction();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
+    public void doneAction() {
+        Intent intent = new Intent(this, TeamList.class);
+        startActivity(intent);
+    }
 }

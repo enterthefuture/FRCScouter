@@ -16,8 +16,8 @@
     <string name="criteria_DW">Catch Weight</string>
     <string name="title_activity_team_detail">Team Detail</string>
     <string name="title_activity_team_list">Team Rankings</string>
-    <string name="clear_warning">Clear all entries?
-        This will remove all teams and matches forever.</string>
+    <string name="clear_warning">To clear all entries, go to Settings -> Applications -> FRC Scouting Toolkit then click clear data.
+    This can be hard. That is intentional so that it is not done accidentally.</string>
     <string name="cancel"> Cancel </string>
     <string name="clear_confirm"> Clear all data. </string>
     <string name="no_teams">No Teams Recorded</string>
