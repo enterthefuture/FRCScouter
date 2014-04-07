@@ -31,8 +31,8 @@ public class TeamList extends ListActivity {
         startManagingCursor(mTeamCursor);
 
         String[] from = new String[] {MatchDbAdapter.KEY_TEAM,
-                MatchDbAdapter.KEY_CRITA, MatchDbAdapter.KEY_CRITB, MatchDbAdapter.KEY_CRITC, MatchDbAdapter.KEY_CRITD};
-        int[] to = new int[] { R.id.teamText, R.id.rowCritA, R.id.rowCritB, R.id.rowCritC, R.id.rowCritD  };
+                MatchDbAdapter.KEY_CRITA, MatchDbAdapter.KEY_CRITB, MatchDbAdapter.KEY_CRITC, MatchDbAdapter.KEY_CRITD, MatchDbAdapter.KEY_CRITE, MatchDbAdapter.KEY_CRITF};
+        int[] to = new int[] { R.id.teamText, R.id.rowCritA, R.id.rowCritB, R.id.rowCritC, R.id.rowCritD, R.id.rowCritE, R.id.rowCritF  };
 
         // Now create an array adapter and set it to display using our row
         SimpleCursorAdapter notes =

@@ -22,6 +22,8 @@ public class DataInput extends ActionBarActivity {
     private EditText mCritB;
     private EditText mCritC;
     private EditText mCritD;
+    private EditText mCritE;
+    private EditText mCritF;
     private EditText mPenalties;
     private RatingBar mCoop;
     private RatingBar mDefense;
@@ -38,6 +40,8 @@ public class DataInput extends ActionBarActivity {
         mCritB = (EditText) findViewById(R.id.criteriaBNum);
         mCritC = (EditText) findViewById(R.id.criteriaCNum);
         mCritD = (EditText) findViewById(R.id.criteriaDNum);
+        mCritE = (EditText) findViewById(R.id.criteriaENum);
+        mCritF = (EditText) findViewById(R.id.criteriaFNum);
         mPenalties = (EditText) findViewById(R.id.penaltiesNum);
         mCoop = (RatingBar) findViewById(R.id.coopRating);
         mDefense = (RatingBar) findViewById(R.id.defenseRating);
@@ -122,6 +126,14 @@ public class DataInput extends ActionBarActivity {
         if(mCritD != null)
             critD = Integer.parseInt(mCritD.getText().toString());
 
+        int critE =  -1;
+        if(mCritE != null)
+            critE = Integer.parseInt(mCritE.getText().toString());
+
+        int critF =  -1;
+        if(mCritF != null)
+            critF = Integer.parseInt(mCritF.getText().toString());
+
         int penalties = -1;
         if(mPenalties != null)
             penalties = Integer.parseInt(mPenalties.getText().toString());
@@ -133,10 +145,10 @@ public class DataInput extends ActionBarActivity {
 
         if(mRowId == -1) {
             TAG="Saving";
-            mDbHelper.createMatch(team, match, alliance, critA, critB, critC, critD,penalties, coop, defense);
+            mDbHelper.createMatch(team, match, alliance, critA, critB, critC, critD, critE, critF, penalties, coop, defense);
         } else {
             TAG="Updating";
-            mDbHelper.updateMatch( mRowId, team, match, alliance, critA, critB, critC, critD,penalties, coop, defense);
+            mDbHelper.updateMatch( mRowId, team, match, alliance, critA, critB, critC, critD, critE, critF, penalties, coop, defense);
         }
 
         Log.v(TAG, Integer.toString(team) + " " +
@@ -146,6 +158,8 @@ public class DataInput extends ActionBarActivity {
                 Integer.toString(critB) + " " +
                 Integer.toString(critC) + " " +
                 Integer.toString(critD) + " " +
+                Integer.toString(critE) + " " +
+                Integer.toString(critF) + " " +
                 Integer.toString(penalties) + " " +
                 Integer.toString(coop) + " " +
                 Integer.toString(defense)
@@ -161,9 +175,11 @@ public class DataInput extends ActionBarActivity {
         mCritB.setText(String.valueOf(c.getInt(5)));
         mCritC.setText(String.valueOf(c.getInt(6)));
         mCritD.setText(String.valueOf(c.getInt(7)));
-        mPenalties.setText(String.valueOf(c.getInt(8)));
-        mCoop.setRating((float)(c.getInt(9) / 2.0));
-        mDefense.setRating((float)(c.getInt(10) / 2.0));
+        mCritE.setText(String.valueOf(c.getInt(8)));
+        mCritF.setText(String.valueOf(c.getInt(9)));
+        mPenalties.setText(String.valueOf(c.getInt(10)));
+        mCoop.setRating((float)(c.getInt(11) / 2.0));
+        mDefense.setRating((float)(c.getInt(12) / 2.0));
     }
 
 }

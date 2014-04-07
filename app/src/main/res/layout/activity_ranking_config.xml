@@ -82,6 +82,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/criteria_EW"
+            android:id="@+id/criteriaEWeightLabel" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/criteriaEWeight"
+            android:layout_gravity="center_horizontal"
+            android:max="100"
+            android:progress="20"
+            android:indeterminate="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/criteria_FW"
+            android:id="@+id/criteriaFWeightLabel" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/criteriaFWeight"
+            android:max="100"
+            android:progress="20"
+            android:indeterminate="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Penalty Weight"
             android:id="@+id/penaltyWeightLabel" />
 

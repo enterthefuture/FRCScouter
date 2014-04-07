@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Team Number"
-        android:id="@+id/textView"
+        android:id="@+id/teamLabel"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -24,7 +24,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Team #"
         android:id="@+id/teamNum"
-        android:layout_alignTop="@+id/textView"
+        android:layout_alignTop="@+id/teamLabel"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -34,7 +34,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/criteria_A"
         android:id="@+id/cirteriaALabel"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/teamLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="45dp" />
@@ -86,8 +86,8 @@
         android:text="Crit C"
         android:id="@+id/criteriaCNum"
         android:layout_below="@+id/criteriaBNum"
-        android:layout_alignLeft="@+id/criteriaBNum"
-        android:layout_alignStart="@+id/criteriaBNum" />
+        android:layout_alignStart="@+id/criteriaBNum"
+        android:layout_alignParentRight="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -113,9 +113,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/criteria_E"
+        android:id="@+id/criteriaELabel"
+        android:layout_below="@+id/criteriaDLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Crit E"
+        android:id="@+id/criteriaENum"
+        android:layout_above="@+id/criteriaFLabel"
+        android:layout_alignEnd="@+id/coopNum"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/criteria_F"
+        android:id="@+id/criteriaFLabel"
+        android:layout_below="@+id/criteriaELabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Crit F"
+        android:id="@+id/criteriaFNum"
+        android:layout_below="@+id/criteriaENum"
+        android:layout_alignStart="@+id/criteriaENum"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Penalties"
         android:id="@+id/penaltiesLabel"
-        android:layout_below="@+id/criteriaDLabel"
+        android:layout_below="@+id/criteriaFLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -125,9 +165,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Penalties"
         android:id="@+id/penaltiesNum"
-        android:layout_below="@+id/criteriaDNum"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/criteriaFNum"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -145,9 +184,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Coop"
         android:id="@+id/coopNum"
-        android:layout_alignTop="@+id/coopLabel"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/penaltiesNum"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -166,7 +204,7 @@
         android:text="Defense"
         android:id="@+id/defenseNum"
         android:layout_below="@+id/coopNum"
-        android:layout_alignRight="@+id/penaltiesNum"
-        android:layout_alignEnd="@+id/penaltiesNum" />
+        android:layout_alignEnd="@+id/penaltiesNum"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

@@ -13,6 +13,8 @@ public class TeamDetail extends ActionBarActivity {
     private TextView mCritB;
     private TextView mCritC;
     private TextView mCritD;
+    private TextView mCritE;
+    private TextView mCritF;
     private TextView mPenalties;
     private TextView mCoop;
     private TextView mDefense;
@@ -28,6 +30,8 @@ public class TeamDetail extends ActionBarActivity {
         mCritB = (TextView) findViewById(R.id.criteriaBNum);
         mCritC = (TextView) findViewById(R.id.criteriaCNum);
         mCritD = (TextView) findViewById(R.id.criteriaDNum);
+        mCritE = (TextView) findViewById(R.id.criteriaENum);
+        mCritF = (TextView) findViewById(R.id.criteriaFNum);
         mPenalties = (TextView) findViewById(R.id.penaltiesNum);
         mCoop = (TextView) findViewById(R.id.coopNum);
         mDefense = (TextView) findViewById(R.id.defenseNum);
@@ -45,15 +49,17 @@ public class TeamDetail extends ActionBarActivity {
         MatchDbAdapter mDbHelper;
         mDbHelper = new MatchDbAdapter(this);
         mDbHelper.open();
-        long[] stats = mDbHelper.getStats(team);
+        double[] stats = mDbHelper.getStats(team);
         mTeam.setText(Integer.toString(team));
-        mCritA.setText(Long.toString(stats[0]));
-        mCritB.setText(Long.toString(stats[1]));
-        mCritC.setText(Long.toString(stats[2]));
-        mCritD.setText(Long.toString(stats[3]));
-        mPenalties.setText(Long.toString(stats[4]));
-        mCoop.setText(Long.toString(stats[5]));
-        mDefense.setText(Long.toString(stats[6]));
+        mCritA.setText(Double.toString(stats[0]));
+        mCritB.setText(Double.toString(stats[1]));
+        mCritC.setText(Double.toString(stats[2]));
+        mCritD.setText(Double.toString(stats[3]));
+        mCritE.setText(Double.toString(stats[4]));
+        mCritF.setText(Double.toString(stats[5]));
+        mPenalties.setText(Double.toString(stats[6]));
+        mCoop.setText(Double.toString(stats[7]));
+        mDefense.setText(Double.toString(stats[8]));
     }
 
     @Override
