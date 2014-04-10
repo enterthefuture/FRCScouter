@@ -132,6 +132,19 @@ public class MatchDbAdapter {
         return mCursor;
 
     }
+    public Cursor fetchTeamMatchCursor(String teamNum) throws SQLException {
+        Cursor mCursor =
+                mDb.query(true, DATABASE_TABLE,
+                        new String[] {KEY_ROWID, KEY_TEAM, KEY_MATCH, KEY_ALLIANCE, KEY_CRITA, KEY_CRITB, KEY_CRITC, KEY_CRITD, KEY_CRITE, KEY_CRITF, KEY_PENALTY, KEY_COOP, KEY_DEFENSE}
+                        , KEY_TEAM + "=" + teamNum, null,
+                        null, null, KEY_TEAM, null);
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+
+    }
+
     public boolean updateMatch(long rowId, int team, int match, int alliance, int critA, int critB, int critC, int critD, int critE, int critF, int penalty, int coop, int defense) {
         ContentValues args = new ContentValues();
         args.put(KEY_TEAM, team);
@@ -176,6 +189,16 @@ public class MatchDbAdapter {
                 ", sum("+KEY_PENALTY+") AS "+KEY_PENALTY+", avg("+KEY_COOP+") AS "+KEY_COOP+ ", avg("+KEY_DEFENSE+") AS "+KEY_DEFENSE+
                 " from " + DATABASE_TABLE + " group by " + KEY_TEAM + ";";
 
+        Cursor cursor = mDb.rawQuery(selectQuery, null);
+        return cursor;
+    }
+    public Cursor fetchAllTeams( String sortBy )
+    {
+        String selectQuery = "select "+ KEY_ROWID+", "+KEY_TEAM+", avg("+KEY_CRITA+") AS "+KEY_CRITA+", avg("+KEY_CRITB+") AS "+KEY_CRITB+
+                ", avg("+KEY_CRITC+") AS "+KEY_CRITC+ ", avg("+KEY_CRITD+") AS "+KEY_CRITD+ ", avg("+KEY_CRITE+") AS "+KEY_CRITE+ ", avg("+KEY_CRITF+") AS "+KEY_CRITF+
+                ", sum("+KEY_PENALTY+") AS "+KEY_PENALTY+", avg("+KEY_COOP+") AS "+KEY_COOP+ ", avg("+KEY_DEFENSE+") AS "+KEY_DEFENSE+
+                " from " + DATABASE_TABLE + " group by " + KEY_TEAM + " order by " + sortBy + " DESC;";
+        Log.v("SORT", selectQuery);
         Cursor cursor = mDb.rawQuery(selectQuery, null);
         return cursor;
     }

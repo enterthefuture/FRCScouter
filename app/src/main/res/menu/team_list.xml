@@ -3,4 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.willdo.frcscouter.app.TeamList" >
 
+    <item android:id="@+id/action_filter"
+        android:title="Sort"
+        android:icon="@drawable/ic_action_filter"
+        android:orderInCategory="0"
+        app:showAsAction="always" />
 </menu>

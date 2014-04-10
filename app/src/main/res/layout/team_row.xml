@@ -141,6 +141,22 @@
             android:text="CF"
             android:id="@+id/rowCritF"
             android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Defense"
+            android:id="@+id/textView3"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="DEF"
+            android:id="@+id/rowDefense"
+            android:layout_marginLeft="10dp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -153,7 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Penalties"
+        android:text="Total Penalties"
         android:id="@+id/penaltiesLabel"
         android:layout_below="@+id/criteriaFLabel"
         android:layout_alignParentLeft="true"

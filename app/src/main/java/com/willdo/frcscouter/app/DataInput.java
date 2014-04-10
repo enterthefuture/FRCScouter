@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Switch;
@@ -27,6 +29,7 @@ public class DataInput extends ActionBarActivity {
     private EditText mPenalties;
     private RatingBar mCoop;
     private RatingBar mDefense;
+
     long mRowId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,41 +104,41 @@ public class DataInput extends ActionBarActivity {
     }
     public void saveEntry() {
         int team = -1;
-        if(mTeam != null)
+        if(mTeam.getText().toString() != "")
             team = Integer.parseInt(mTeam.getText().toString());
 
         int match = -1;
-        if(mMatch != null)
+        if(mMatch.getText().toString() != "")
             match = Integer.parseInt(mMatch.getText().toString());
 
         int alliance = (mAlliance.isChecked())?0:1;
 
         int critA = -1;
-        if(mCritA != null)
+        if(mCritA.getText().toString() != "")
             critA = Integer.parseInt(mCritA.getText().toString());
 
         int critB = -1;
-        if(mCritB != null)
+        if(mCritB.getText().toString() != "")
             critB = Integer.parseInt(mCritB.getText().toString());
 
         int critC =  -1;
-        if(mCritC != null)
+        if(mCritC.getText().toString() != "")
             critC = Integer.parseInt(mCritC.getText().toString());
 
         int critD =  -1;
-        if(mCritD != null)
+        if(mCritD.getText().toString() != "")
             critD = Integer.parseInt(mCritD.getText().toString());
 
         int critE =  -1;
-        if(mCritE != null)
+        if(mCritE.getText().toString() != "")
             critE = Integer.parseInt(mCritE.getText().toString());
 
         int critF =  -1;
-        if(mCritF != null)
+        if(mCritF.getText() != null)
             critF = Integer.parseInt(mCritF.getText().toString());
 
         int penalties = -1;
-        if(mPenalties != null)
+        if(mPenalties.getText() != null)
             penalties = Integer.parseInt(mPenalties.getText().toString());
 
         int coop = (int)(mCoop.getRating()*2);
@@ -182,4 +185,9 @@ public class DataInput extends ActionBarActivity {
         mDefense.setRating((float)(c.getInt(12) / 2.0));
     }
 
+    public void deleteButtonAction( View view ) {
+        mDbHelper.deleteMatch(mRowId);
+        Intent i = new Intent(this, MatchList.class);
+        startActivity(i);
+    }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filters_array">
+        <item>Team Number</item>
+        <item>@string/criteria_A</item>
+        <item>@string/criteria_B</item>
+        <item>@string/criteria_C</item>
+        <item>@string/criteria_D</item>
+        <item>@string/criteria_E</item>
+        <item>@string/criteria_F</item>
+        <item>Defense</item>
+    </string-array>
+    <string-array name="actions_array" >
+        <item>Edit</item>
+        <item>Delete</item>
+        <item>Cancel</item>
+    </string-array>
+</resources>

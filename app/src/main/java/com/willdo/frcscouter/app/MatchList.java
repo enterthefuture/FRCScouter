@@ -1,25 +1,37 @@
 package com.willdo.frcscouter.app;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 
 public class MatchList extends ListActivity {
     private MatchDbAdapter mDbHelper;
     private Cursor mMatchCursor;
+    private EditText mTeamNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_list);
+
+        mTeamNumber = (EditText) findViewById(R.id.teamNumber);
+
         mDbHelper = new MatchDbAdapter(this);
         mDbHelper.open();
+
+        mMatchCursor = mDbHelper.fetchAllMatches();
         fillData();
     }
 
@@ -36,16 +48,23 @@ public class MatchList extends ListActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_done) {
-            doneAction();
+        switch( item.getItemId() ) {
+            case R.id.action_done:
+                doneAction();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+    }
+
+    public void filterButtonAction( View view ) {
+        String filterTeam = mTeamNumber.getText().toString();
+        mMatchCursor = mDbHelper.fetchTeamMatchCursor(filterTeam);
+        fillData();
     }
 
     private void fillData() {
         // Get all of the notes from the database and create the item list
-        mMatchCursor = mDbHelper.fetchAllMatches();
         startManagingCursor(mMatchCursor);
 
         String[] from = new String[] {MatchDbAdapter.KEY_TEAM, MatchDbAdapter.KEY_MATCH,
@@ -63,9 +82,10 @@ public class MatchList extends ListActivity {
         super.onListItemClick(l, v, position, id);
         Cursor c = mMatchCursor;
         c.moveToPosition(position);
+        final long rowId = c.getLong(c.getColumnIndexOrThrow(MatchDbAdapter.KEY_ROWID));
+
         Intent i = new Intent(this, DataInput.class);
-        i.putExtra(MatchDbAdapter.KEY_ROWID, c.getLong(
-                c.getColumnIndexOrThrow(MatchDbAdapter.KEY_ROWID)));
+        i.putExtra(MatchDbAdapter.KEY_ROWID, rowId);
         startActivity(i);
     }
 

@@ -26,5 +26,6 @@
     <string name="clear_confirm"> Clear all data. </string>
     <string name="no_teams">No Teams Recorded</string>
     <string name="no_matches">No Matches Recorded</string>
+    <string name="confirm">Confirm</string>
 
 </resources>

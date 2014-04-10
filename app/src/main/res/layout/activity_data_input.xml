@@ -215,6 +215,7 @@
                 android:numStars="5"
                 android:rating="2.5"
                 android:stepSize=".5" />
+
         </LinearLayout>
     </ScrollView>
 
